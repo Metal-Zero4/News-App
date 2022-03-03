@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    
+<div class="header" style=" font-weight: bolder; display: flex; justify-content: center; border-bottom: .5px solid black; width: 55%; margin-left: auto; margin-right: auto;">
+    <h1>South Texas Times</h1>
+</div>
+    {% for article in article_list %}
+<div class="articles" style="display: flex; flex-direction: column; max-width: 60%; margin-left: auto; margin-right: auto; margin-top: 3rem;">
+    <div class="primary-articles-container">
+        <div class="primary-article">
+            <div class="card mb-3">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ article.title }}</h5>
+                  <p class="card-text">{{ article.body|truncatechars:200 }}</p>
+                  <p class="card-text"><small class="text-muted">Published: {{ article.created_on }} | By {{ article.author }}</small></p>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+        <div class="secondary-container" style="display: flex; flex-direction: row; justify-content: center; margin-left: auto; margin-right: auto; margin-top: 2rem;">
+            <div class="secondary-card" style="max-width: 40%;">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-8">
+                        <div class="card-body" style="margin-left: auto; margin-right: auto;">
+                          <h5 class="card-title">About the Paper</h5>
+                          <p class="card-text">The South-Texas Times was founded in 2022 by Dev Developerson. Our core values are based upon the belief that every citizen of this great state deserves to know the real truth about what goes on here on a day-to-day basis.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; justify-content: center; border: 1px solid black; margin-right: auto; margin-left: auto; margin-top: 2rem; max-width: 40%; padding: 1.5rem;">
+                    <h1 style="margin-left: auto; margin-right: auto;">Sign Up</h1>
+                    <div style="max-width: 60%; margin-left: auto; margin-right: auto;">
+                        <button class="btn btn-success"><a style= "text-decoration: none; color: white;" href="{% url 'signup' %}">Sign Up!</a></button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

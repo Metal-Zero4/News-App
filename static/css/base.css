@@ -1,0 +1,11 @@
+body{
+    font-family: 'Cormorant Garamond', serif;
+}
+div .header{
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,15 @@
+div .header{
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+.articles{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+.secondary-articles-container{
+    display: flex;
+    flex-direction: row;
+}
